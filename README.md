@@ -1,21 +1,21 @@
 # WebsocketExample
 
-**TODO: Add description**
+Simple websocket examples to connect to catalyx exchange
 
-## Installation
+## Running it
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `websocket_example` to your list of dependencies in `mix.exs`:
+With an elixir version installed run `mix deps.get`, then `mix compile` to fetch dependencies and compile the project.
+
+Once that's setup run the REPL with `iex -S mix`
+
+In the REPL spawn one of the websocket clients via:
 
 ```elixir
-def deps do
-  [
-    {:websocket_example, "~> 0.1.0"}
-  ]
-end
+{:ok, pid} = WebsocketExample.MarketDataClient.start_link
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/websocket_example](https://hexdocs.pm/websocket_example).
+or alternatively add you API key and secret in `user_data_client.ex` then spawn that client via
 
+```elixir
+{:ok, pid} = WebsocketExample.UserDataClient.start_link
+```

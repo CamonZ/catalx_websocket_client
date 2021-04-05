@@ -7,12 +7,8 @@ defmodule WebsocketExample.Application do
 
   def start(_type, _args) do
     # List all child processes to be supervised
-    socket_opts = [url: "wss://api.catalx.io/markets/websocket"]
 
-
-    children = [
-      {PhoenixClient.Socket, {socket_opts, name: PhoenixClient.Socket}}
-    ]
+    children = []
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
